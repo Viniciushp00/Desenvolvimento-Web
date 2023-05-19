@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/stylespadrao.css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../imagens/icon.png">
+    <title>Home</title>
+</head>
+<body>
+
+    <header class="menu-h">
+        <nav id="nav">
+            <div id="logo">
+                <span><a href="./index.html">Get-Pandas</a></span>
+            </div>
+            <div class="dropdown">
+                <button id="btn-mobile">Menu</button>
+                <div class="dropdown-child">
+                    <ul id="menu">
+                        <li class="lista-header"><a href="login.html" class="nao-mobile">Entrar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+    </header>
+
+    <main class="b-area">
+        <form class="form-login">
+            <div class="form-login-header">
+                <h2>Login Cliente</h2>
+            </div>
+            <div class="form-login-conteudo">
+                <div class="form-login-conteudo-area">
+                    <label for="usuario">Usuário:</label><br>
+                    <input type="text" id="usuario" autocomplete="off" maxlength="50" placeholder="Usuário">
+                </div>
+                <div class="form-login-conteudo-area">
+                    <label for="password">Senha:</label><br>
+                    <input type="password" id="password" autocomplete="off" placeholder="Senha">
+                </div>
+            </div>
+            <div class="form-login-footer">
+                <button maxlength="50" class="submit_login" ><a href="hpc_cliente.html"> Login</a></button> <br>
+                <a href="#" class="recuperar_senha">Esqueceu a senha</a> <br> <br>
+
+            </div>
+        </form>
+    
+        <form class="form-login">
+            <div class="form-login-header">
+                <h2>Login Prestador</h2>
+            </div>
+            <div class="form-login-conteudo">
+                <div class="form-login-conteudo-area">
+                    <label for="usuario">Usuário:</label><br>
+                    <input type="text" id="usuario" autocomplete="off" maxlength="50" placeholder="Usuário">
+                </div>
+                <div class="form-login-conteudo-area">
+                    <label for="password">Senha:</label><br>
+                    <input type="password" id="password" autocomplete="off" placeholder="Senha">
+                </div>
+            </div>
+            <div class="form-login-footer">
+                <button maxlength="50" class="submit_login" ><a href="ControlePrestador.html"> Login</a></button> <br>
+                <a href="#" class="recuperar_senha">Esqueceu a senha</a> <br> <br>
+            </div>
+        </form>
+    </main>
+
+    <footer id="rodape">
+        <ul>
+            <a href="quemsomos.html"><li class="itens-rodape">Quem Somos</li></a>
+        </ul>
+    </footer>
+    <script src="../js/header.js"></script>
+</body>
+</html>

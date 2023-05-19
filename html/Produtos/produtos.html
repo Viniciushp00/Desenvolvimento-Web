@@ -1,0 +1,68 @@
+<?php
+include("../../php/conexao.php");
+include("../../php/produto.php")
+?>
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/stylespadrao.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../imagens/icon.png">
+    <title>Home</title>
+</head>
+<body>
+
+    <!--Menu horinzontal-->
+    <header class="menu-h">
+        <nav >
+            <div id="logo">
+                <span> <a href="../index.html">Get-Pandas</a> </span>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="../conta_c.html">Criar Cadastro</a></li>
+                    <li><a href="../login.html">Entrar</a></li>
+                </ul>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+    </header>
+    <!--------------------------------------------->
+
+    <main class="b-area">
+        <div class="d-form">
+            <form class="form-pedido" method="POST" action="../../php/produto.php">
+                <h2>Preencha as informações abaixo para seguirmos com a sua solicitação.</h2> <br>
+                <select class="dados-pequenos" name="area">
+                    <option value="1">Desenvolvedor Web</option>
+                    <option value="2">Desenvolvedor Mobile</option>
+                    <option value="3">QA</option>
+                    <option value="4">DBA</option>
+                </select>
+                <input type="text" class="dados" name="cpf" id="cpf" maxlength="14" onkeypress="validaCpf()" required placeholder="Digite seu CPF ...">
+                <textarea cols="30" rows="10" name="descrição_pedido" maxlength="250" placeholder="Digite uma descrição do que você precisa"   ></textarea>
+                <h2>Para quando você precisa?</h2> <br>
+                <input type="date" class="dados-pequenos" name="data_solicitada_entrega">
+                <input type="submit" class="dados" value="Enviar">
+            </form>
+        </div>
+    </main>
+    
+    <footer id="rodape">
+        <div id="nav-rodape">
+            <ul>
+                <li><a href="../quemsomos.html"> Quem Somos</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="../../js/form_restricoes.js"></script>
+    <script src="../../js/cadastro_restricoes.js"></script>
+
+</body>
+</html>

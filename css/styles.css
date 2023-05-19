@@ -1,0 +1,247 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f1f1f1;
+    /*rgb(194, 194, 194);*/
+}
+
+.conteudo{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-family:'Trebuchet MS',   sans-serif;
+}
+
+.menu-h nav{
+    background-color: #2d2e47;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    /*Usado para sobrepor o Header*/
+    z-index: 10;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.menu-h nav #logo a{
+    position:absolute;
+    top:10px;
+    font-size: 35px;
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.lista-header {
+    list-style: none;
+}
+
+#rodape{
+    width: 100%;
+    height: 200px;
+    position: static;
+    background-color: #2d2e47;
+    bottom: 0;
+}
+
+.itens-rodape {
+    color: #fff;
+    left: 70%;
+    top: 50px;
+    list-style: none;
+    text-decoration: none;
+}
+
+.itens-rodape li{
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.menu-h nav{
+    background-color: #2d2e47;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    /*Usado para sobrepor o Header*/
+    z-index: 10;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.menu-h nav #logo a{
+    position:absolute;
+    top:10px;
+    font-size: 35px;
+    color:white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.menu-h nav #logo a:hover{
+    color:#00BAB4;
+    font-weight:bold;
+    border-bottom: solid #00BAB4;
+
+}
+
+.menu-h nav ul{
+    list-style: none;
+    padding: 0;
+}
+
+.menu-h nav ul li{
+    display:inline;
+}
+
+
+.menu-h nav ul li a{
+    display: inline-block;
+    padding: 20px;
+    /*Tira a decoração do texto, nesse caso como se trata de uma ancora o texto ficará sem UnderLine*/
+    text-decoration: none;
+    color: #fff;
+    /*Efeito na cor de background*/
+    transition: background .4s;
+    cursor:pointer;
+}
+
+.menu-h nav ul li a:hover{
+    color:#00BAB4;
+    font-weight:bold;
+    border-bottom: solid #00BAB4;
+
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .menu-h nav #logo a{
+        position:absolute;
+        top:10px;
+        font-size: 25px;
+        color:white;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .nao-mobile {
+        visibility: collapse;
+    }
+
+    #btn-mobile {
+        padding: 20px;
+        text-decoration: none;
+        color: #fff;
+        cursor:pointer;
+        background-color: #2d2e47;
+        display: flex;
+        border: none;
+        font-family:'Courier New', Courier, monospace;
+    }
+
+    #btn-mobile:hover{
+        color:#00BAB4;
+        font-weight:bold;
+        border-bottom: solid #00BAB4;
+    }
+
+    #menu {
+        display: none;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background-color: #2d2e47;
+        height: 100vh;
+        z-index: 100;
+    }
+
+    #nav.active #menu, .nao-mobile {
+        display: block;
+        visibility: visible;
+        padding: 20px;
+        text-decoration: none;
+        color: #fff;
+        cursor:pointer;
+        background-color: #2d2e47;
+        font-family:'Courier New', Courier, monospace;
+    }
+
+    .nao-mobile {
+        margin: 0px;
+    }
+
+    #rodape{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .itens-rodape {
+        padding: 20px;
+        text-decoration: none;
+        color: #fff;
+        cursor:pointer;
+        height: 100%;
+    }
+    
+    .itens-rodape a{
+        color:white;
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 701px) {
+    #btn-mobile{
+        visibility: collapse;
+        position: absolute
+    }
+
+    .lista-header {
+        display: inline-block;
+        padding: 20px;
+        text-decoration: none;
+        color: #fff;
+        cursor:pointer;
+    }
+    
+    .lista-header a{
+        color:white;
+        text-decoration: none;
+    }
+
+    .lista-header:hover{
+        color:#00BAB4;
+        font-weight:bold;
+        border-bottom: solid #00BAB4;
+    }
+
+    #rodape{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .itens-rodape {
+        display: inline-block;
+        padding: 20px;
+        text-decoration: none;
+        color: #fff;
+        cursor:pointer;
+    }
+    
+    .itens-rodape a{
+        color:white;
+        text-decoration: none;
+    }
+
+    .itens-rodape:hover{
+        background-color:#404264;
+        font-weight:bold;
+    }
+}
