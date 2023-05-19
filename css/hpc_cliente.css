@@ -166,7 +166,6 @@
   opacity: 0.7;
   color: #2d2e47;
   transition: all 0.3s ease;
-  top:750px ;
 }
 .swiper-button-next:hover, .swiper-button-prev:hover{
   opacity: 1;
