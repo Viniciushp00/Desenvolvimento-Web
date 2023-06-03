@@ -11,7 +11,7 @@ try{
 
     if($sql->rowCount()>0 ){
 
-        header("Location: ../html/ControlePrestador.html");
+        header("Location: ../html/ControlePrestador.php");
 
     }else{
         echo "<script>window.location.href='../html/login.html';alert('Usuário não cadastrado');</script>";
