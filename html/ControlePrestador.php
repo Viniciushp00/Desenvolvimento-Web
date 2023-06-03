@@ -87,30 +87,30 @@
 				<label for="preco-servico">Preço do Serviço:</label>
 				<input type="number" id="preco-servico" name="preco-servico">
 				<div class="tabela-area-logada">
-					<table border="1">
-						<thead>
-							<tr>
-								<th>Nome</th>
-								<th>Descrição</th>
-								<th>Preço</th>
-								<th>Ações</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Serviço 1</td>
-								<td>Descrição do serviço 1</td>
-								<td>R$ 100,00</td>
-								<td><a href="#" >Aceitar</a> </td>
-							</tr>
-							<tr>
-								<td>Serviço 2</td>
-								<td>Descrição do serviço 2</td>
-								<td>R$ 200,00</td>
-								<td><a href="#">Aceitar</a> </td>
-							</tr>
-						</tbody>
-					</table>
+					<?php
+						include_once("../php/conexao.php");
+
+						$sql = $conectar->query("SELECT * FROM site.pedido as p INNER JOIN site.usuarios as u ON p.id_cliente =u.cpf WHERE id_prestador IS NULL");
+
+						echo "<table border='1'>
+								<tr>
+									<td>Titulo</td>
+									<td>Nome</td>
+									<td>Preço</td>
+									<td>Ações</td>
+								</tr>"; 
+
+						while ($linha=$sql->fetch(PDO::FETCH_ASSOC))
+						{
+							echo "<tr>
+									<td>$linha[titulo]</td>
+									<td>$linha[nome]</td>
+									<td>$linha[preco]</td>
+									<td><a href='excluir.php?$linha[email]'>Aceitar</a></td>
+								</tr>";
+						}
+						echo "</table>";
+					?>
 				</div>
 				
 			</form>
