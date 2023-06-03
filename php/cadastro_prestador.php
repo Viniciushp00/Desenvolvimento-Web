@@ -2,6 +2,7 @@
 
 include_once("conexao.php");
 
+try{
 $nome = $_POST['nome'];
 $email = $_POST['email'];
 $cpf_ponto = $_POST['cpf'];
@@ -28,7 +29,10 @@ if($sql->rowCount()==0 ){
     echo "<script>window.location.href='../html/conta_p.html';alert('CPF já cadastrado');</script>";
 }
 
-
+}
+catch (PDOException $e) {
+    echo ("Erro: ". $e->getMessage());
+}
 
 
 
