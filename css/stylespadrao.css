@@ -318,19 +318,15 @@ body{
 
 /*-------------Pagina de crição de conta cliente----------------*/
 .box{
-    color: rgb(0, 0, 0);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #fff;
-    padding: 50px 50px 0 50px;
-    border-radius: 15px;
-    /*Largura do formulario*/
-    width: 800px;
-    height: 900px;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
     box-shadow: 0 0 10px rgb(0, 0, 0);
-    margin-top: 100px;
+    border-radius: 3px;
+    padding: 1em;
 }
 
 
@@ -394,3 +390,20 @@ legend{
 #invalid_email, #invalid_name{
     display: none;
 }
+
+@media screen and (max-width: 768px) {
+    .box {
+    width: 90%;
+    height: auto;
+    padding: 30px;
+    }
+    }
+    
+    /* Para telas maiores que 768px */
+    @media screen and (min-width: 769px) {
+    .box {
+    width: 70%;
+    height: auto;
+    padding: 50px;
+    }
+    }

@@ -1,50 +1,107 @@
-.container_form {
+/* Estilos gerais */
 
-    width: 700px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f1f1f1;
+  }
+  
+  /* Menu */
+  
+  .menu-h nav {
+    background-color: #2d2e47;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    z-index: 10;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .menu-h nav #logo a {
+    position: absolute;
+    top: 10px;
+    font-size: 35px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .menu-h nav #logo a:hover {
+    color: #00bab4;
+    font-weight: bold;
+    border-bottom: solid #00bab4;
+  }
+  
+  .menu-h nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .menu-h nav ul li {
+    display: inline;
+  }
+  
+  .menu-h nav ul li a {
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: background .4s;
+    cursor: pointer;
+  }
+  
+  .menu-h nav ul li a:hover {
+    color: #00bab4;
+    font-weight: bold;
+    border-bottom: solid #00bab4;
+  }
+  
+  /* Formulário */
+  
+  .container_form {
+    width: 90%;
+    max-width: 700px;
     margin: auto;
     display: flex;
     flex-direction: column;
-    background:#ffffff; 
+    background: #ffffff;
     box-shadow: 0 0 10px rgb(0, 0, 0);
-    border-radius:3px; 
-    padding:1em;
-
-}
-
-.container_form h1 {
-    
-    font-family:'open_sansregular';
+    border-radius: 3px;
+    padding: 1em;
+  }
+  
+  .container_form h1 {
+    font-family: 'open_sansregular';
     font-size: 2.3em;
     color: #00dae0;
     border-bottom: 1px #f0eded solid;
     margin-bottom: 10px;
     padding-bottom: 10px;
-
-}
-
-.form_grupo {
-    width: 90%;
-    margin: 0 auto;
+  }
+  
+  .form_grupo {
     margin-bottom: 30px;
     position: relative;
-}
-
-.form_grupo .legenda { 
-
-    width: 100%;
-    float: left;
+  }
+  
+  .form_grupo .legenda {
     margin-top: 15px;
     margin-bottom: 15px;
     font-weight: bold;
-}
-
-/* SUBMIT */
-
-.submit { width:100%; float:left; }
-
-.submit_btn {
-
+  }
+  
+  .submit {
+    width: 100%;
     float: left;
+  }
+  
+  .submit_btn {
     display: block;
     padding: 5px 30px;
     border: none;
@@ -54,38 +111,32 @@
     text-shadow: 0 0 5px rgb(0, 0, 0);
     font-family: inherit;
     font-size: 25px;
-    font-family:'open_sansregular';
+    font-family: 'open_sansregular';
     border-radius: 6px;
     margin: 20px auto;
     cursor: pointer;
     transition: all 0.3s;
-}
-
-.submit_btn:hover {
-
+  }
+  
+  .submit_btn:hover {
     background-color: #444444;
     transform: scale(1.03);
-
-}
-
-.form_new_input {
+  }
+  
+  .form_new_input {
     display: none;
-}
-
-.radio_label,
-.check_label {
-
+  }
+  
+  .radio_label,
+  .check_label {
     float: left;
     width: 100%;
     padding-left: 30px;
     cursor: pointer;
     margin-bottom: 8px;
-
-}
-
-
-.radio_new_btn {
-
+  }
+  
+  .radio_new_btn {
     position: absolute;
     left: 0;
     transform: translateY(3px);
@@ -93,11 +144,9 @@
     width: 20px;
     border-radius: 50%;
     border: 0.2em solid #4c4c4c;
-
-}
-
-.radio_new_btn::after {
-
+  }
+  
+  .radio_new_btn::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -108,21 +157,17 @@
     border-radius: 50%;
     background-color: #6fcffb;
     visibility: hidden;
-
-}
-
-.check_new_btn {
-
+  }
+  
+  .check_new_btn {
     position: absolute;
     left: 0;
     height: 20px;
     width: 20px;
     border: 0.2em solid #4c4c4c;
-
-}
-
-.check_new_btn::after {
-
+  }
+  
+  .check_new_btn::after {
     content: "";
     height: 8px;
     width: 8px;
@@ -132,31 +177,24 @@
     transform: translate(-50%, -50%);
     background-color: #6fcffb;
     visibility: hidden;
-
-}
-
-.form_new_input:checked ~ .radio_label .radio_new_btn::after,
-.form_new_input:checked ~ .check_label .check_new_btn::after {
- 
+  }
+  
+  .form_new_input:checked ~ .radio_label .radio_new_btn::after,
+  .form_new_input:checked ~ .check_label .check_new_btn::after {
     visibility: visible;
-}
-
-.form_new_input:checked ~ .radio_label,
-.form_new_input:checked ~ .check_label {
+  }
+  
+  .form_new_input:checked ~ .radio_label,
+  .form_new_input:checked ~ .check_label {
     color: #6fcffb;
-}
-
-
-.form_grupo {
-
-    width: 100%;
+  }
+  
+  .form_grupo {
     margin-bottom: 20px;
     position: relative;
-
-}
-
-.form_input {
-
+  }
+  
+  .form_input {
     font-size: 16px;
     font-family: inherit;
     padding: 8px 15px;
@@ -166,92 +204,45 @@
     outline: none;
     width: 100%;
     transition: all 0.3s;
-
-}
-
-.form_message,
-.form_message .message_input {
-
+  }
+  
+  .form_message,
+  .form_message .message_input {
     width: 100%;
-    float:left;
-
-}
-
-.form_message_label {
-
+    float: left;
+  }
+  
+  .form_message_label {
     width: 100%;
     float: left;
     margin-top: 15px;
     margin-bottom: 15px;
     font-weight: bold;
+  }
+  
+  /* Media queries para tornar o formulário responsivo */
+  
+  @media screen and (max-width: 700px) {
+    .container_form {
+      width: 90%;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .container_form {
+      width: 90%;
+      padding: 0.5em;
+    }
     
-}
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    .container_form h1 {
+      font-size: 1.8em;
+    }
     
-}
-
-body{
-    background-color: #f1f1f1;
-    /*rgb(194, 194, 194);*/
-}
-
-
-/*----------------Menu----------------*/
-.menu-h nav{
-    background-color: #2d2e47;
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    width: 100%;
-    height: 60px;
-    /*Usado para sobrepor o Header*/
-    z-index: 10;
-    font-family:'Courier New', Courier, monospace;
-}
-
-.menu-h nav #logo a{
-    position:absolute;
-    top:10px;
-    font-size: 35px;
-    color:white;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.menu-h nav #logo a:hover{
-    color:#00BAB4;
-    font-weight:bold;
-    border-bottom: solid #00BAB4;
-
-}
-
-.menu-h nav ul{
-    list-style: none;
-    padding: 0;
-}
-
-.menu-h nav ul li{
-    display:inline;
-}
-
-
-.menu-h nav ul li a{
-    display: inline-block;
-    padding: 20px;
-    /*Tira a decoração do texto, nesse caso como se trata de uma ancora o texto ficará sem UnderLine*/
-    text-decoration: none;
-    color: #fff;
-    /*Efeito na cor de background*/
-    transition: background .4s;
-    cursor:pointer;
-}
-
-.menu-h nav ul li a:hover{
-    color:#00BAB4;
-    font-weight:bold;
-    border-bottom: solid #00BAB4;
-
-}
+    .form_input {
+      font-size: 14px;
+    }
+    
+    .submit_btn {
+      font-size: 20px;
+    }
+  }
