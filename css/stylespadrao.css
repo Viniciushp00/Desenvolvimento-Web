@@ -115,7 +115,7 @@ body{
 }
 
 #homepage .txt{
-    width: 600px;
+    width: 100%;
 }
 
 #homepage .txt h1{

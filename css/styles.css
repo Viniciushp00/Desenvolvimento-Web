@@ -95,9 +95,7 @@ body{
     padding: 0;
 }
 
-.menu-h nav ul li{
-    display:inline;
-}
+
 
 
 .menu-h nav ul li a{
@@ -119,7 +117,11 @@ body{
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1000px) {
+
+    .dropdown{
+        z-index: 11;
+    }
 
     .menu-h nav #logo a{
         position:absolute;
@@ -136,6 +138,7 @@ body{
 
     #btn-mobile {
         padding: 20px;
+        width: 100%;
         text-decoration: none;
         color: #fff;
         cursor:pointer;
@@ -194,9 +197,27 @@ body{
         color:white;
         text-decoration: none;
     }
+    .lista-header {
+        display: block;
+      }
+
+    #img-homepage{
+        display: none;
+    }
+
 }
 
-@media screen and (min-width: 701px) {
+@media screen and (max-width: 1400px) {
+    .avaliacoes{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+}
+
+
+@media screen and (min-width: 1001px) {
     #btn-mobile{
         visibility: collapse;
         position: absolute
@@ -244,4 +265,9 @@ body{
         background-color:#404264;
         font-weight:bold;
     }
+    .menu-h nav ul li{
+        display:inline;
+    }
+
+
 }
