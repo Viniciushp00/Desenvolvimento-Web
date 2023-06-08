@@ -1,16 +1,16 @@
 <?php
 session_start();
-include_once("conexao.php");
 
 try{
-    $_SESSION ["senha"] =  $_POST['password'];
+    include_once("conexao.php");
+    
     $login = $_POST['usuario'];
     $senha = $_POST['password'];
     $sql = $conectar->query("SELECT * FROM site.usuarios WHERE email = '$login' AND cpf='$senha' AND FK_perfil=1");
     
 
     if($sql->rowCount()>0 ){
-
+        $_SESSION ["senha"] =  $_POST['password'];
         header("Location: ../html/ControlePrestador.php");
 
     }else{

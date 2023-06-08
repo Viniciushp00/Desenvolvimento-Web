@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 03-Jun-2023 às 06:19
+-- Tempo de geração: 08-Jun-2023 às 21:01
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -20,7 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `site`
 --
+
 CREATE DATABASE site;
+
 -- --------------------------------------------------------
 USE site;
 --
@@ -65,7 +67,8 @@ CREATE TABLE `pedido` (
 --
 
 INSERT INTO `pedido` (`id_pedido`, `titulo`, `descricao_pe`, `data_entrega_pe`, `preco`, `id_cliente`, `id_prestador`, `id_area`, `id_status`) VALUES
-(11, 'teste', 'teste', '2023-06-07', 1200, '38435003809', NULL, 1, 1);
+(11, 'teste', 'teste', '2023-06-07', 1200, '38435003809', '32165498710', 1, 1),
+(12, 'Teste 08_06', 'E isso ai', '2023-06-07', 1400, '38435003809', '32165498710', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -102,9 +105,9 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`id_status`, `nome_status`) VALUES
-(1, 'aguardando'),
-(2, 'em andamento'),
-(3, 'concluido');
+(1, 'Aguardando'),
+(2, 'Em andamento'),
+(3, 'Concluído');
 
 -- --------------------------------------------------------
 
@@ -120,7 +123,7 @@ CREATE TABLE `usuarios` (
   `estado` varchar(2) DEFAULT NULL,
   `cidade` varchar(50) DEFAULT NULL,
   `endereço` varchar(50) DEFAULT NULL,
-  `cep` int(9) DEFAULT NULL,
+  `cep` varchar(9) DEFAULT NULL,
   `sexo` varchar(9) DEFAULT NULL,
   `data_nascimento` date NOT NULL,
   `pre_especialidade` varchar(50) DEFAULT NULL,
@@ -133,11 +136,12 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`cpf`, `nome`, `telefone`, `email`, `estado`, `cidade`, `endereço`, `cep`, `sexo`, `data_nascimento`, `pre_especialidade`, `pre_outras_opc`, `FK_perfil`) VALUES
-('12345678910', 'Wanessa Estrela da Silva', '11987102156', 'viniciushp00@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', 1455030, 'feminino', '2001-09-18', NULL, NULL, 2),
+('12345678910', 'Wanessa Estrela da Silva', '11987102156', 'viniciushp00@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '1455030', 'feminino', '2001-09-18', NULL, NULL, 2),
 ('32165498710', 'Marcos Vinicius Reis de Souza', NULL, 'prestador@gmail.com', NULL, NULL, NULL, NULL, NULL, '2023-06-01', 'Dev_Mobile', '', 1),
-('38435003809', 'Marcos Vinicius Reis Souza', '11987102156', 'teste@gmail', 'SP', 'São Paulo', 'Rua Hungria', 154450, 'Macho', '2023-05-31', NULL, NULL, 2),
-('96385274110', 'Maria de Fatima', '321231231213', 'maria@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', 1455030, 'feminino', '2023-06-01', NULL, NULL, 2),
-('98765432110', 'Yasmin Reis de Souza', '11987102156', 'yasmin@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', 4458030, 'feminino', '2023-06-01', NULL, NULL, 2);
+('38435003809', 'Marcos Vinicius Reis Souza', '11987102156', 'teste@gmail', 'SP', 'São Paulo', 'Rua Hungria', '154450', 'Macho', '2023-05-31', NULL, NULL, 2),
+('95184623750', 'Marcos Vinicius Reis de Souza', '12198715265', 'viniciushp00@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '4458', 'masculino', '2023-06-21', NULL, NULL, 2),
+('96385274110', 'Maria de Fatima', '321231231213', 'maria@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '1455030', 'feminino', '2023-06-01', NULL, NULL, 2),
+('98765432110', 'Yasmin Reis de Souza', '11987102156', 'yasmin@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '4458030', 'feminino', '2023-06-01', NULL, NULL, 2);
 
 --
 -- Índices para tabelas despejadas
@@ -192,7 +196,7 @@ ALTER TABLE `area`
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `perfil`

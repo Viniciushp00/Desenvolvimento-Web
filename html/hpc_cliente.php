@@ -61,76 +61,67 @@
     <section  class="infos-tabela">
       <h2>Serviços Contratados</h2>
       <div class="tabela-area-logada">
-        <table border="1">
-          <thead>
-            <tr>
-              <th>Nome</th>
-              <th>Descrição</th>
-              <th>Preço</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Serviço 1</td>
-              <td>Descrição do serviço 1</td>
-              <td>R$ 100,00</td>
-              <td>Concluido</td>
-            </tr>
-            <tr>
-              <td>Serviço 2</td>
-              <td>Descrição do serviço 2</td>
-              <td>R$ 200,00</td>
-              <td>Em andamento</td>
-            </tr>
-            <tr>
-              <td>Serviço 2</td>
-              <td>Descrição do serviço 2</td>
-              <td>R$ 200,00</td>
-              <td>Em andamento</td>
-            </tr>
-            <tr>
-              <td>Serviço 2</td>
-              <td>Descrição do serviço 2</td>
-              <td>R$ 200,00</td>
-              <td>Em andamento</td>
-            </tr>
-            <tr>
-              <td>Serviço 2</td>
-              <td>Descrição do serviço 2</td>
-              <td>R$ 200,00</td>
-              <td>Em andamento</td>
-            </tr>
-            <tr>
-              <td>Serviço 2</td>
-              <td>Descrição do serviço 2</td>
-              <td>R$ 200,00</td>
-              <td>Em andamento</td>
-            </tr>
-            <tr>
-              <td>Serviço 2</td>
-              <td>Descrição do serviço 2</td>
-              <td>R$ 200,00</td>
-              <td>Em andamento</td>
-            </tr>
-            <tr>
-              <td>Serviço 2</td>
-              <td>Descrição do serviço 2</td>
-              <td>R$ 200,00</td>
-              <td>Em andamento</td>
-            </tr>
-            <tr>
-              <td>Serviço 2</td>
-              <td>Descrição do serviço 2</td>
-              <td>R$ 200,00</td>
-              <td>Em andamento</td>
-            </tr>
-            
-            
-          </tbody>
-        </table>
+        <?php
+          include_once("../php/conexao.php");
+          session_start();
+
+          $_senha = $_SESSION["senha"];
+
+          $sql_cliente = $conectar->query("SELECT * FROM site.pedido as p INNER JOIN site.status as s on p.id_status=s.id_status INNER JOIN site.usuarios as u on u.cpf=p.id_prestador OR p.id_prestador=NULL WHERE id_cliente ='$_senha'");
+
+          echo "<table border='1'>
+								<tr>
+									<td>Titulo</td>
+									<td>Status</td>
+									<td>Prestador</td>
+									<td>Ações</td>
+								</tr>";
+                
+                
+          while($linha=$sql_cliente->fetch(PDO::FETCH_ASSOC)){
+            echo"<tr>
+                  <td>$linha[titulo]</td>
+                  <td>$linha[nome_status]</td>
+                  <td>$linha[nome]</td>
+                  <td><a hrref='#'>Alterar Status</a></td>
+                </tr>";
+          }
+          echo"</table>"
+        ?>
       </div>
       <p>Quer contrar um serviço ? <a href="Produtos/produtos.html">Clique aqui</a> </p>
+    </section>
+  </div>
+  <br><br><br>
+  <div class="area-div-tabela">
+    <section  class="infos-tabela">
+      <h2>Serviços que não tem um prestador</h2>
+      <div class="tabela-area-logada">
+        <?php
+          $_senha = $_SESSION["senha"];
+
+          $sql_cliente = $conectar->query("SELECT * FROM site.pedido as p INNER JOIN site.status as s on p.id_status=s.id_status WHERE id_cliente ='$_senha' AND id_prestador IS NULL");
+
+          echo "<table border='1'>
+								<tr>
+									<td>Titulo</td>
+									<td>Status</td>
+									<td>Preco</td>
+									<td>Ações</td>
+								</tr>";
+                
+                
+          while($linha=$sql_cliente->fetch(PDO::FETCH_ASSOC)){
+            echo"<tr>
+                  <td>$linha[titulo]</td>
+                  <td>$linha[nome_status]</td>
+                  <td>$linha[preco]</td>
+                  <td><a hrref='#'>Excluir</a></td>
+                </tr>";
+          }
+          echo"</table>"
+        ?>
+      </div>
     </section>
   </div>
 

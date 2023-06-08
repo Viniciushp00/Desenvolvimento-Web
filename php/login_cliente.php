@@ -1,6 +1,7 @@
 <?php
 
 include_once("conexao.php");
+session_start();
 
 try{
     
@@ -11,7 +12,8 @@ try{
 
     if($sql->rowCount()>0 ){
 
-        header("Location: ../html/hpc_cliente.html");
+        $_SESSION ["senha"] =  $_POST['password'];
+        header("Location: ../html/hpc_cliente.php");
 
     }else{
         echo "<script>window.location.href='../html/login.html';alert('Usuário não cadastrado');</script>";
