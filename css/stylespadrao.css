@@ -390,3 +390,7 @@ legend{
 #submit:hover{
     background-image: linear-gradient(to right rgb(0, 80, 172), rgb(80, 19, 195));
 }
+
+#invalid_email, #invalid_name{
+    display: none;
+}

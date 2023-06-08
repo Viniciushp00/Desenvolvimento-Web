@@ -12,13 +12,14 @@ try{
     $estado = $_POST['estado'];
     $cidade = $_POST['cidade'];
     $endereco = $_POST['endereco'];
-    $cep = $_POST['cep'];
+    $cep_ponto = $_POST['cep'];
 
     function limpar_texto($str){ 
         return preg_replace("/[^0-9]/", "", $str); 
     }
 
     $cpf = limpar_texto($cpf_ponto);
+    $cep = limpar_texto($cep_ponto);
 
 
     $sql = $conectar->query("SELECT * FROM site.usuarios WHERE cpf='$cpf'");

@@ -1,9 +1,9 @@
 <?php
-
+session_start();
 include_once("conexao.php");
 
 try{
-    
+    $_SESSION ["senha"] =  $_POST['password'];
     $login = $_POST['usuario'];
     $senha = $_POST['password'];
     $sql = $conectar->query("SELECT * FROM site.usuarios WHERE email = '$login' AND cpf='$senha' AND FK_perfil=1");

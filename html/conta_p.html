@@ -47,6 +47,7 @@
             <div class="form_grupo">
                 <label for="nome" class="form_label">Nome</label>
                 <input type="text" name="nome" class="form_input" id="nome" maxlength="50" onblur="verificaNome()" placeholder="Nome\Razão Social" required>
+                <div id="invalid_name">Valor invalido</div>
             </div>
 
             <div class="form_grupo">
@@ -58,6 +59,7 @@
                 <label for="e-mail" class="form_label">Email</label>
                 <input type="email" name="email" class="form_input" onblur="verificaEmail(email.value)" maxlength="50" id="email" placeholder="seuemail@email.com"
                     required>
+                <div id="invalid_email">Valor invalido</div>
             </div>
 
             <div class="form_grupo">

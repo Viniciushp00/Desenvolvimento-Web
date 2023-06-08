@@ -35,13 +35,27 @@
 		<div class="area-div-tabela">
 			<section class="infos-tabela">
 				<h2>Painel de Controle</h2>
-				<p>Olá, [nome do prestador]! Aqui estão algumas informações sobre sua conta:</p>
+<?php
+
+include_once("../php/conexao.php");
+session_start();
+
+$_senha = $_SESSION ["senha"];
+
+$sql_prestador = $conectar->query("SELECT * FROM site.usuarios WHERE cpf ='$_senha'");
+
+$linha=$sql_prestador->fetch(PDO::FETCH_ASSOC);
+
+
+echo("<p>Olá, $linha[nome]! Aqui estão algumas informações sobre sua conta:</p>
 				<ul>
-					<li>Nome: [nome do prestador]</li>
-					<li>E-mail: [e-mail do prestador]</li>
-					<li>Telefone: [telefone do prestador]</li>
-					<li>Endereço: [endereço do prestador]</li>
-				</ul>
+					<li>Nome: $linha[nome]</li>
+					<li>E-mail: $linha[email]</li>
+					<li>Especialidade: $linha[pre_especialidade]</li>
+				</ul>")
+
+
+?>
 			</section>
 		</div>
 
