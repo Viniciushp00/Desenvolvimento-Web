@@ -47,11 +47,11 @@
         <button class="flecha-direita controle" aria-label="Next Image"> <b>></b> </button>
         <!--Imagens-->
         <div class="carrossel">
-            <a href="Produtos/produtos.html" target="_self"  ><img src="../imagens/Dev_Web.jpg" alt="Desenvolvedor Web" class="item current-item" ></a>
-            <a href="Produtos/produtos.html" target="_self"  ><img src="../imagens/QA.jpg" alt="kirby" class="item current-item" ></a>
-            <a href="Produtos/produtos.html" target="_self"  ><img src="../imagens/DBA.jpg" alt="kirby" class="item current-item" ></a>
-            <a href="Produtos/produtos.html" target="_self"  ><img src="../imagens/Dev_mobile.jpg" alt="kirby" class="item current-item" ></a>
-            <a href="Produtos/produtos.html" target="_self"  ><img src="../imagens/Ana_dados.jpg" alt="kirby" class="item current-item" ></a>
+            <a href="Produtos/produtos.php" target="_self"  ><img src="../imagens/Dev_Web.jpg" alt="Desenvolvedor Web" class="item current-item" ></a>
+            <a href="Produtos/produtos.php" target="_self"  ><img src="../imagens/QA.jpg" alt="kirby" class="item current-item" ></a>
+            <a href="Produtos/produtos.php" target="_self"  ><img src="../imagens/DBA.jpg" alt="kirby" class="item current-item" ></a>
+            <a href="Produtos/produtos.php" target="_self"  ><img src="../imagens/Dev_mobile.jpg" alt="kirby" class="item current-item" ></a>
+            <a href="Produtos/produtos.php" target="_self"  ><img src="../imagens/Ana_dados.jpg" alt="kirby" class="item current-item" ></a>
         </div>
     </div>
 </section>
@@ -74,7 +74,6 @@
 									<td>Titulo</td>
 									<td>Status</td>
 									<td>Prestador</td>
-									<td>Ações</td>
 								</tr>";
                 
                 
@@ -83,13 +82,12 @@
                   <td>$linha[titulo]</td>
                   <td>$linha[nome_status]</td>
                   <td>$linha[nome]</td>
-                  <td><a hrref='#'>Alterar Status</a></td>
                 </tr>";
           }
           echo"</table>"
         ?>
       </div>
-      <p>Quer contrar um serviço ? <a href="Produtos/produtos.html">Clique aqui</a> </p>
+      <p>Quer contrar um serviço ? <a href="Produtos/produtos.php">Clique aqui</a> </p>
     </section>
   </div>
   <br><br><br>
@@ -116,7 +114,7 @@
                   <td>$linha[titulo]</td>
                   <td>$linha[nome_status]</td>
                   <td>$linha[preco]</td>
-                  <td><a hrref='#'>Excluir</a></td>
+                  <td><a href='../php/exclui_pedido.php?id=$linha[id_pedido]'>Excluir</a></td>
                 </tr>";
           }
           echo"</table>"

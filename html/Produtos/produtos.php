@@ -33,12 +33,20 @@
         <div class="d-form">
             <form class="form-pedido" method="POST" action="../../php/produto.php">
                 <h2>Preencha as informações abaixo para seguirmos com a sua solicitação.</h2> <br>
-                <select class="dados-pequenos" name="area">
-                    <option value="1">Desenvolvedor Web</option>
-                    <option value="2">Desenvolvedor Mobile</option>
-                    <option value="3">QA</option>
-                    <option value="4">DBA</option>
-                </select>
+                    <?php
+                        include_once("../../php/conexao.php");
+
+                        $sql_area = $conectar->query("SELECT * FROM site.area");
+
+                        echo"<select class='dados-pequenos' name='area'>";
+                        while($linha=$sql_area->fetch(PDO::FETCH_ASSOC)){
+                            echo"<option value='$linha[id_area]'>$linha[nome_area]</option>'>";
+                        }
+
+                        echo "</select>";
+
+                    ?>
+                    
                 <input type="text" class="dados" name="cpf" id="cpf" maxlength="14" onkeypress="validaCpf()" required placeholder="Digite seu CPF ..."> 
                 <input type="text" class="dados" name="titulo" maxlength="50" placeholder="Titulo da sua solicitação..." required>
                 <textarea cols="30" rows="10" name="descrição_pedido" maxlength="250" placeholder="Digite uma descrição do que você precisa"   ></textarea>
