@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Jun-2023 às 01:32
+-- Tempo de geração: 13-Jun-2023 às 01:43
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -127,7 +127,7 @@ CREATE TABLE `usuarios` (
   `cep` varchar(9) DEFAULT NULL,
   `sexo` varchar(9) DEFAULT NULL,
   `data_nascimento` date NOT NULL,
-  `pre_especialidade` int(11) DEFAULT NULL,
+  `pre_especialidade` varchar(50) DEFAULT NULL,
   `pre_outras_opc` varchar(500) DEFAULT NULL,
   `FK_perfil` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -138,6 +138,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`cpf`, `nome`, `telefone`, `email`, `estado`, `cidade`, `endereço`, `cep`, `sexo`, `data_nascimento`, `pre_especialidade`, `pre_outras_opc`, `FK_perfil`) VALUES
 ('12345678910', 'Wanessa Estrela da Silva', '11987102156', 'viniciushp00@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '1455030', 'feminino', '2001-09-18', NULL, NULL, 2),
+('44444444444', 'teste', NULL, 'teste@gmail.com', NULL, NULL, NULL, NULL, NULL, '2002-09-23', '0', 'teste', 1),
 ('95184623750', 'Marcos Vinicius Reis de Souza', '12198715265', 'viniciushp00@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '4458', 'masculino', '2023-06-21', NULL, NULL, 2),
 ('96385274110', 'Maria de Fatima', '321231231213', 'maria@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '1455030', 'feminino', '2023-06-01', NULL, NULL, 2),
 ('98765432110', 'Yasmin Reis de Souza', '11987102156', 'yasmin@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '4458030', 'feminino', '2023-06-01', NULL, NULL, 2);
