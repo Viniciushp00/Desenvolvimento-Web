@@ -118,7 +118,7 @@
 								<tr>
 									<td>$linha[titulo]</td>
 									<td>$linha[nome]</td>
-									<td>$linha[preco]</td>
+									<td>A combinar</td>
 									<td><a href='../php/aceita_pedido.php?id=$linha[id_pedido]'>ACEITAR</a></td>
 								</tr>";
 						}
