@@ -1,7 +1,7 @@
 <?php
 try{
     // PDO = Classe PHP Data Obejects
-    $conectar = new PDO("mysql:host=localhost;port=3306;dataname=dev_web","root","");
+    $conectar = new PDO("mysql:host=localhost;port=3306;dataname=site","root","");
 
     //echo("Conectado com sucesso");
 }
