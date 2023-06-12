@@ -20,9 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `site`
 --
-
+CREATE DATABASE site;
 -- --------------------------------------------------------
-
+USE site;
 --
 -- Estrutura da tabela `area`
 --
