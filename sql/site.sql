@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Jun-2023 às 00:39
+-- Tempo de geração: 13-Jun-2023 às 01:32
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -20,9 +20,9 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `site`
 --
-CREATE DATABASE site;
+
 -- --------------------------------------------------------
-USE site;
+
 --
 -- Estrutura da tabela `area`
 --
@@ -58,7 +58,6 @@ CREATE TABLE `pedido` (
   `titulo` varchar(50) NOT NULL,
   `descricao_pe` varchar(500) NOT NULL,
   `data_entrega_pe` date NOT NULL,
-  `preco` float NOT NULL,
   `id_cliente` varchar(14) NOT NULL,
   `id_prestador` varchar(14) DEFAULT NULL,
   `id_area` int(255) NOT NULL,
@@ -69,10 +68,8 @@ CREATE TABLE `pedido` (
 -- Extraindo dados da tabela `pedido`
 --
 
-INSERT INTO `pedido` (`id_pedido`, `titulo`, `descricao_pe`, `data_entrega_pe`, `preco`, `id_cliente`, `id_prestador`, `id_area`, `id_status`) VALUES
-(11, 'teste', 'teste', '2023-06-07', 1200, '38435003809', '32165498710', 1, 1),
-(12, 'Teste 08_06', 'E isso ai', '2023-06-07', 1400, '38435003809', '32165498710', 1, 1),
-(17, 'teste meu amo', 'testetestestestestes', '2023-06-05', 10, '38435003809', '32165498710', 9, 1);
+INSERT INTO `pedido` (`id_pedido`, `titulo`, `descricao_pe`, `data_entrega_pe`, `id_cliente`, `id_prestador`, `id_area`, `id_status`) VALUES
+(19, 'teste', 'asdasdas', '2023-06-27', '95184623750', NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -130,7 +127,7 @@ CREATE TABLE `usuarios` (
   `cep` varchar(9) DEFAULT NULL,
   `sexo` varchar(9) DEFAULT NULL,
   `data_nascimento` date NOT NULL,
-  `pre_especialidade` varchar(50) DEFAULT NULL,
+  `pre_especialidade` int(11) DEFAULT NULL,
   `pre_outras_opc` varchar(500) DEFAULT NULL,
   `FK_perfil` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -141,9 +138,6 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`cpf`, `nome`, `telefone`, `email`, `estado`, `cidade`, `endereço`, `cep`, `sexo`, `data_nascimento`, `pre_especialidade`, `pre_outras_opc`, `FK_perfil`) VALUES
 ('12345678910', 'Wanessa Estrela da Silva', '11987102156', 'viniciushp00@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '1455030', 'feminino', '2001-09-18', NULL, NULL, 2),
-('22222222222', 'Yasmin Reis de Souza', NULL, 'yasmin@gmail.com', NULL, NULL, NULL, NULL, NULL, '2023-06-08', 'Ci_dados', '', 1),
-('32165498710', 'Marcos Vinicius Reis de Souza', NULL, 'prestador@gmail.com', NULL, NULL, NULL, NULL, NULL, '2023-06-01', 'Dev_Mobile', '', 1),
-('38435003809', 'Marcos Vinicius Reis Souza', '11987102156', '1', 'SP', 'São Paulo', 'Rua Hungria', '154450', 'Macho', '2023-05-31', NULL, NULL, 2),
 ('95184623750', 'Marcos Vinicius Reis de Souza', '12198715265', 'viniciushp00@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '4458', 'masculino', '2023-06-21', NULL, NULL, 2),
 ('96385274110', 'Maria de Fatima', '321231231213', 'maria@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '1455030', 'feminino', '2023-06-01', NULL, NULL, 2),
 ('98765432110', 'Yasmin Reis de Souza', '11987102156', 'yasmin@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '4458030', 'feminino', '2023-06-01', NULL, NULL, 2);
@@ -201,7 +195,7 @@ ALTER TABLE `area`
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `perfil`

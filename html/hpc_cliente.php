@@ -113,7 +113,7 @@
             echo"<tr>
                   <td>$linha[titulo]</td>
                   <td>$linha[nome_status]</td>
-                  <td>$linha[preco]</td>
+                  <td>A combinar</td>
                   <td><a href='../php/exclui_pedido.php?id=$linha[id_pedido]'>Excluir</a></td>
                 </tr>";
           }

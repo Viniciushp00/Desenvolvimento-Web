@@ -60,8 +60,6 @@
                 <textarea cols="30" rows="10" name="descrição_pedido" maxlength="250" placeholder="Digite uma descrição do que você precisa"   ></textarea>
                 <h2>Para quando você precisa?</h2> <br>
                 <input type="date" class="dados-pequenos" name="data_solicitada_entrega">
-                <h2>Preço que está disposto a pagar...</h2> <br>
-                <input type="number" class="dados" name="preco">
                 <input type="submit" class="dados" value="Enviar">
             </form>
         </div>
