@@ -73,7 +73,6 @@
 									<td>Titulo</td>
 									<td>Status</td>
 									<td>Preço</td>
-									<td>Ações</td>
 								</tr>"; 
 
 						while($linha=$sql_prestador->fetch(PDO::FETCH_ASSOC)){
@@ -84,7 +83,6 @@
 									<td>$linha[titulo]</td>
 									<td>$linha[nome_status]</td>
 									<td>$linha[preco]</td>
-									<td><a hrref='#'>Alterar Status</a></td>
 								</tr>";
 						}
 
@@ -100,11 +98,6 @@
 		<section  class="infos-tabela">
 			<h2>Procurar Serviço</h2>
 			<form>
-				<label for="nome-servico">Nome do Serviço:</label>
-				<input type="text" id="nome-servico" name="nome-servico">
-
-				<label for="preco-servico">Preço do Serviço:</label>
-				<input type="number" id="preco-servico" name="preco-servico">
 				<div class="tabela-area-logada">
 					<?php
 
