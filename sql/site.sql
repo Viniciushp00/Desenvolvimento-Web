@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Jun-2023 às 21:01
+-- Tempo de geração: 13-Jun-2023 às 00:39
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -21,10 +21,8 @@ SET time_zone = "+00:00";
 -- Banco de dados: `site`
 --
 
-CREATE DATABASE site;
-
 -- --------------------------------------------------------
-USE site;
+
 --
 -- Estrutura da tabela `area`
 --
@@ -39,10 +37,15 @@ CREATE TABLE `area` (
 --
 
 INSERT INTO `area` (`id_area`, `nome_area`) VALUES
-(1, 'Desenvolvedor_web'),
-(2, 'Desenvolvedor_mobile'),
+(1, 'Desenvolvedor Web'),
+(2, 'Desenvolvedor Mobile'),
 (3, 'QA'),
-(4, 'DBA');
+(4, 'DBA'),
+(5, 'Arquiteto de Redes'),
+(6, 'Cientista de Dados'),
+(7, 'Analista de Dados'),
+(8, 'Product Manager'),
+(9, 'DevOps');
 
 -- --------------------------------------------------------
 
@@ -68,7 +71,8 @@ CREATE TABLE `pedido` (
 
 INSERT INTO `pedido` (`id_pedido`, `titulo`, `descricao_pe`, `data_entrega_pe`, `preco`, `id_cliente`, `id_prestador`, `id_area`, `id_status`) VALUES
 (11, 'teste', 'teste', '2023-06-07', 1200, '38435003809', '32165498710', 1, 1),
-(12, 'Teste 08_06', 'E isso ai', '2023-06-07', 1400, '38435003809', '32165498710', 1, 1);
+(12, 'Teste 08_06', 'E isso ai', '2023-06-07', 1400, '38435003809', '32165498710', 1, 1),
+(17, 'teste meu amo', 'testetestestestestes', '2023-06-05', 10, '38435003809', '32165498710', 9, 1);
 
 -- --------------------------------------------------------
 
@@ -137,8 +141,9 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`cpf`, `nome`, `telefone`, `email`, `estado`, `cidade`, `endereço`, `cep`, `sexo`, `data_nascimento`, `pre_especialidade`, `pre_outras_opc`, `FK_perfil`) VALUES
 ('12345678910', 'Wanessa Estrela da Silva', '11987102156', 'viniciushp00@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '1455030', 'feminino', '2001-09-18', NULL, NULL, 2),
+('22222222222', 'Yasmin Reis de Souza', NULL, 'yasmin@gmail.com', NULL, NULL, NULL, NULL, NULL, '2023-06-08', 'Ci_dados', '', 1),
 ('32165498710', 'Marcos Vinicius Reis de Souza', NULL, 'prestador@gmail.com', NULL, NULL, NULL, NULL, NULL, '2023-06-01', 'Dev_Mobile', '', 1),
-('38435003809', 'Marcos Vinicius Reis Souza', '11987102156', 'teste@gmail', 'SP', 'São Paulo', 'Rua Hungria', '154450', 'Macho', '2023-05-31', NULL, NULL, 2),
+('38435003809', 'Marcos Vinicius Reis Souza', '11987102156', '1', 'SP', 'São Paulo', 'Rua Hungria', '154450', 'Macho', '2023-05-31', NULL, NULL, 2),
 ('95184623750', 'Marcos Vinicius Reis de Souza', '12198715265', 'viniciushp00@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '4458', 'masculino', '2023-06-21', NULL, NULL, 2),
 ('96385274110', 'Maria de Fatima', '321231231213', 'maria@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '1455030', 'feminino', '2023-06-01', NULL, NULL, 2),
 ('98765432110', 'Yasmin Reis de Souza', '11987102156', 'yasmin@gmail.com', 'SP', 'São Paulo', 'Rua e isso ai', '4458030', 'feminino', '2023-06-01', NULL, NULL, 2);
@@ -190,13 +195,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `area`
 --
 ALTER TABLE `area`
-  MODIFY `id_area` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_area` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `perfil`
