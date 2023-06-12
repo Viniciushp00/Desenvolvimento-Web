@@ -102,13 +102,14 @@
 					<?php
 
 
-						$sql = $conectar->query("SELECT * FROM site.pedido as p INNER JOIN site.usuarios as u ON p.id_cliente =u.cpf WHERE id_prestador IS NULL");
+						$sql = $conectar->query("SELECT * FROM site.pedido as p INNER JOIN site.usuarios as u ON p.id_cliente =u.cpf INNER JOIN site.area as a ON a.id_area = p.id_area WHERE id_prestador IS NULL");
 
 						echo "<table border='1'>
 								<tr>
 									<td>Titulo</td>
 									<td>Nome</td>
 									<td>Preço</td>
+									<td>Área</td>
 									<td>Ações</td>
 								</tr>"; 
 
@@ -119,6 +120,7 @@
 									<td>$linha[titulo]</td>
 									<td>$linha[nome]</td>
 									<td>A combinar</td>
+									<td>$linha[nome_area]</td>
 									<td><a href='../php/aceita_pedido.php?id=$linha[id_pedido]'>ACEITAR</a></td>
 								</tr>";
 						}
