@@ -71,7 +71,7 @@
 
           echo "<table border='1'>
 								<tr>
-									<td>Titulo</td>
+									<td>Título</td>
 									<td>Status</td>
 									<td>Prestador</td>
 								</tr>";
@@ -87,7 +87,7 @@
           echo"</table>"
         ?>
       </div>
-      <p>Quer contrar um serviço ? <a href="Produtos/produtos.php">Clique aqui</a> </p>
+      <p>Quer contratar um serviço? <a href="Produtos/produtos.php">Clique aqui</a> </p>
     </section>
   </div>
   <br><br><br>
@@ -104,7 +104,7 @@
 								<tr>
 									<td>Titulo</td>
 									<td>Status</td>
-									<td>Preco</td>
+									<td>Preço</td>
 									<td>Ações</td>
 								</tr>";
                 
