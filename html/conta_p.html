@@ -42,11 +42,12 @@
 
         <h1>Formulário de Cadastro</h1>
 
-        <form class="form" action="#" method="post">
+        <form class="form" action="../php/cadastro_prestador.php" method="post">
 
             <div class="form_grupo">
                 <label for="nome" class="form_label">Nome</label>
                 <input type="text" name="nome" class="form_input" id="nome" maxlength="50" onblur="verificaNome()" placeholder="Nome\Razão Social" required>
+                <div id="invalid_name">Valor invalido</div>
             </div>
 
             <div class="form_grupo">
@@ -58,11 +59,12 @@
                 <label for="e-mail" class="form_label">Email</label>
                 <input type="email" name="email" class="form_input" onblur="verificaEmail(email.value)" maxlength="50" id="email" placeholder="seuemail@email.com"
                     required>
+                <div id="invalid_email">Valor invalido</div>
             </div>
 
             <div class="form_grupo">
                 <label for="datanascimento" class="form_label">Data de Nascimento</label>
-                <input type="date" name="datanascimento" class="form_input" id="datanascimento"
+                <input type="date" name="data_nascimento" class="form_input" id="datanascimento"
                     placeholder="Data de Nascimento" required>
             </div>
 
@@ -74,48 +76,53 @@
                 <span class="legenda">Quais especialidades:</span>
 
                 <div class="check-btn">
-                    <input type="checkbox" class="form_new_input" id="btn_1" name="aprender" value="btn_1">
+                    <input type="radio" class="form_new_input" id="btn_1" name="especialidade" value="Arquiteto de
+                    Redes">
                     <label for="btn_1" class="form_label check_label"> <span class="check_new_btn"></span> Arquiteto de
                         Redes</label>
                 </div>
 
                 <div class="check-btn">
-                    <input type="checkbox" class="form_new_input" id="btn_2" name="aprender" value="btn_2">
+                    <input type="radio" class="form_new_input" id="btn_2" name="especialidade" value="Cientista de
+                    Dados">
                     <label for="btn_2" class="form_label check_label"><span class="check_new_btn"></span> Cientista de
                         Dados</label>
                 </div>
 
                 <div class="check-btn">
-                    <input type="checkbox" class="form_new_input" id="btn_3" name="aprender" value="btn_3">
+                    <input type="radio" class="form_new_input" id="btn_3" name="especialidade" value="Desenvolvedor
+                    Mobile/Web">
                     <label for="btn_3" class="form_label check_label"><span class="check_new_btn"></span> Desenvolvedor
                         Mobile/Web</label>
                 </div>
 
                 <div class="check-btn">
-                    <input type="checkbox" class="form_new_input" id="btn_4" name="aprender" value="btn_4">
+                    <input type="radio" class="form_new_input" id="btn_4" name="especialidade" value="Customer/User Experienc">
                     <label for="btn_4" class="form_label check_label"><span class="check_new_btn"></span>
                         Customer/User Experience </label>
                 </div>
                 <div class="check-btn">
-                    <input type="checkbox" class="form_new_input" id="btn_5" name="aprender" value="btn_5">
+                    <input type="radio" class="form_new_input" id="btn_5" name="especialidade" value="Analista de
+                    Dados">
                     <label for="btn_5" class="form_label check_label"> <span class="check_new_btn"></span> Analista de
                         Dados</label>
                 </div>
 
                 <div class="check-btn">
-                    <input type="checkbox" class="form_new_input" id="btn_6" name="aprender" value="btn_6">
+                    <input type="radio" class="form_new_input" id="btn_6" name="especialidade" value="Product
+                    Manager">
                     <label for="btn_6" class="form_label check_label"><span class="check_new_btn"></span> Product
                         Manager</label>
                 </div>
 
                 <div class="check-btn">
-                    <input type="checkbox" class="form_new_input" id="btn_7" name="aprender" value="btn_7">
+                    <input type="radio" class="form_new_input" id="btn_7" name="especialidade" value="DBA">
                     <label for="btn_7" class="form_label check_label"><span class="check_new_btn"></span> Administrador
                         de Banco de Dados (DBA)</label>
                 </div>
 
                 <div class="check-btn">
-                    <input type="checkbox" class="form_new_input" id="btn_8" name="aprender" value="btn_8">
+                    <input type="radio" class="form_new_input" id="btn_8" name="especialidade" value="DevOps">
                     <label for="btn_8" class="form_label check_label"><span class="check_new_btn"></span> DevOps
                     </label>
                 </div>
@@ -124,8 +131,8 @@
                 <div class="form_message">
 
                     <label for="message" class="form_message_label"> Digite aqui outras opções:</label>
-                    <textarea name="mensagem" id="message" cols="30" rows="3" class="form_input message_input"
-                        required></textarea>
+                    <textarea name="mensagem" id="message" cols="30" maxlength="500" rows="3" class="form_input message_input"
+                        ></textarea>
 
                 </div>
 

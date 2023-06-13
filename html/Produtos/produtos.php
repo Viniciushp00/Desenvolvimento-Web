@@ -1,9 +1,3 @@
-<!-- Php para criação do pedido - Está comentado pois ainda não iniciamos o backEnd do projeto, porém começamos a esboçar como funcionaria no projeto
-    <?php
-    include("../../php/conexao.php");
-    include("../../php/produto.php")
-    ?>
--->
 <!DOCTYPE html>
 <html lang="pt_br">
 <head>
@@ -25,8 +19,6 @@
             </div>
             <div>
                 <ul>
-                    <li><a href="../conta_c.html">Criar Cadastro</a></li>
-                    <li><a href="../login.html">Entrar</a></li>
                 </ul>
             </div>
         </nav>
@@ -41,13 +33,30 @@
         <div class="d-form">
             <form class="form-pedido" method="POST" action="../../php/produto.php">
                 <h2>Preencha as informações abaixo para seguirmos com a sua solicitação.</h2> <br>
-                <select class="dados-pequenos" name="area">
-                    <option value="1">Desenvolvedor Web</option>
-                    <option value="2">Desenvolvedor Mobile</option>
-                    <option value="3">QA</option>
-                    <option value="4">DBA</option>
-                </select>
-                <input type="text" class="dados" name="cpf" id="cpf" maxlength="14" onkeypress="validaCpf()" required placeholder="Digite seu CPF ...">
+                    <?php
+                        include_once("../../php/conexao.php");
+
+                        $sql_area = $conectar->query("SELECT * FROM site.area");
+
+                        echo"<select class='dados-pequenos' name='area'>";
+                        while($linha=$sql_area->fetch(PDO::FETCH_ASSOC)){
+                            echo"<option value='$linha[id_area]'>$linha[nome_area]</option>'>";
+                        }
+
+                        echo "</select>";
+
+                    ?>
+                
+                <?php
+                    session_start();
+
+                    $_cpf = $_SESSION["senha"];
+
+                    echo "
+                        <p style='margin-bottom:5px;'>Seu CPF:<p>
+                        <input type='text' class='dados' name='cpf' id='cpf' value='$_cpf' readonly > "
+                ?>
+                <input type="text" class="dados" name="titulo" maxlength="50" on placeholder="Titulo da sua solicitação..." required>
                 <textarea cols="30" rows="10" name="descrição_pedido" maxlength="250" placeholder="Digite uma descrição do que você precisa"   ></textarea>
                 <h2>Para quando você precisa?</h2> <br>
                 <input type="date" class="dados-pequenos" name="data_solicitada_entrega">
@@ -57,11 +66,9 @@
     </main>
     
     <footer id="rodape">
-        <div id="nav-rodape">
-            <ul>
-                <li><a href="../quemsomos.html"> Quem Somos</a></li>
-            </ul>
-        </div>
+        <ul>
+            <a href="quemsomos.html"><li class="itens-rodape">Quem Somos</li></a>
+        </ul>
     </footer>
     <script src="../../js/form_restricoes.js"></script>
     <script src="../../js/cadastro_restricoes.js"></script>

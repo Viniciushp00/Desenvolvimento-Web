@@ -32,44 +32,44 @@
     </header>
 
     <main class="b-area">
-        <form class="form-login">
+        <form class="form-login" action="../php/login_cliente.php" method="post">
             <div class="form-login-header">
                 <h2>Login Cliente</h2>
             </div>
             <div class="form-login-conteudo">
                 <div class="form-login-conteudo-area">
                     <label for="usuario">Usuário:</label><br>
-                    <input type="text" id="usuario" autocomplete="off" maxlength="50" placeholder="Usuário">
+                    <input type="text" id="usuario" name="usuario" autocomplete="off" maxlength="50" placeholder="Usuário">
                 </div>
                 <div class="form-login-conteudo-area">
                     <label for="password">Senha:</label><br>
-                    <input type="password" id="password" autocomplete="off" placeholder="Senha">
+                    <input type="password" id="password" name="password" maxlength="14" autocomplete="off" placeholder="Senha">
                 </div>
             </div>
             <div class="form-login-footer">
-                <button class="submit_login" ><a href="hpc_cliente.html"> Login</a></button> <br>
-                <a href="#" class="recuperar_senha">Esqueceu a senha</a> <br> <br>
+                <input type="submit" class="submit_login" value="Login"><br>
+                <p>Sua senha é seu CPF e Login é o seu e-mail</p> <br> <br>
 
             </div>
         </form>
     
-        <form class="form-login">
+        <form class="form-login" action="../php/login_prestador.php" method="post">
             <div class="form-login-header">
                 <h2>Login Prestador</h2>
             </div>
             <div class="form-login-conteudo">
                 <div class="form-login-conteudo-area">
                     <label for="usuario">Usuário:</label><br>
-                    <input type="text" id="usuario" autocomplete="off" maxlength="50" placeholder="Usuário">
+                    <input type="text" id="usuario" name="usuario" autocomplete="off" maxlength="50" placeholder="Usuário">
                 </div>
                 <div class="form-login-conteudo-area">
                     <label for="password">Senha:</label><br>
-                    <input type="password" id="password" autocomplete="off" placeholder="Senha">
+                    <input type="password" id="password" name="password" maxlength="11" autocomplete="off" placeholder="Senha">
                 </div>
             </div>
             <div class="form-login-footer">
-                <button class="submit_login" ><a href="ControlePrestador.html"> Login</a></button> <br>
-                <a href="#" class="recuperar_senha">Esqueceu a senha</a> <br> <br>
+                <input type="submit" class="submit_login" value="Login"><br>
+                <p>Sua senha é seu CPF e Login é o seu e-mail</p> <br> <br>
             </div>
         </form>
     </main>

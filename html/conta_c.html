@@ -28,16 +28,13 @@
                     </div>
                 </div>
             </nav>
-            <br>
-            <br>
-            <br>
-            <br>
-        </header>
 
+        </header>
+        <br><br><br><br><br>
         <!--------------------------------------------->
         
     <div class="box">
-        <form action="">
+        <form action="../php/cadastro_cliente.php" method="post">
                 <legend><h2>Fórmulário conta Cliente</h2></legend>
                 <br>
                 <div class="inputbox">
@@ -75,7 +72,7 @@
                 <input type="date" name="data_nascimento" id="data_nascimento" required>
                 <br></br>  
                 <div class="inputbox">
-                    <input type="tex" name="estado" id="estado" class="inputUser" maxlength="2"required>
+                    <input type="tex" name="estado" id="estado" class="inputUser" maxlength="2" placeholder="UF" required>
                     <label for="estado" class="labelInput">Estado</label>
                 </div>
                 <br></br>  
@@ -90,7 +87,7 @@
                 </div>
                 <br></br>
                 <div class="inputbox">
-                    <input type="tex" name="cep" id="cep" maxlength="9" class="inputUser" required>
+                    <input type="tex" name="cep" id="cep" maxlength="9" onkeypress="validaCep()" class="inputUser" required>
                     <label for="nome" class="labelInput">Cep</label>
                 </div>
                 <br></br> 

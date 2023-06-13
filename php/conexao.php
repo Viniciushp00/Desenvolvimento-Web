@@ -1,12 +1,11 @@
 <?php
-    $hostname= "localhost";
-    $bancodedados = "site";
-    $usuario = "root";
-    $senha = "";
+try{
+    // PDO = Classe PHP Data Obejects
+    $conectar = new PDO("mysql:host=localhost;port=3306;dataname=site","root","");
 
-    $mysqli = new mysqli($hostname, $usuario, $senha, $bancodedados);
-
-    if($mysqli->error){
-        die ("falha ao conectar: (". $mysqli->connect_errno.")".$mysqli->connect_errno);
-    }
+    //echo("Conectado com sucesso");
+}
+catch(PDOException $e){
+    echo("Falha ao se conectar".$e->getMessage());
+}
 ?>
